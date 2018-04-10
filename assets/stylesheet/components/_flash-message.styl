@@ -1,0 +1,53 @@
+.flash-message
+  animation slideRight 2s forwards
+  background-color lighten(mountain_meadow, 25%)
+  border .1rem solid darken(mountain_meadow, 40%)
+  border-radius .5rem
+  color darken(mountain_meadow, 60%)
+  padding 1rem
+  position fixed
+  right -5rem * 4
+  text-align center
+  top 15vh
+  width auto
+  z-index 10
+  &:before
+    border-color transparent lighten(mountain_meadow, 25%)
+    border-style solid
+    border-width 0 1rem 1rem 0
+    bottom -.95rem
+    content ''
+    position absolute
+    right 1rem
+    z-index 1
+  &:after
+    border-color transparent darken(mountain_meadow, 40%)
+    border-style solid
+    border-width 0 1.3rem 1.3rem 0
+    bottom -1.3rem
+    content ''
+    position absolute
+    right .87rem
+  a
+    color darken(mountain_meadow, 100%)
+    text-decoration underline
+    &focus,
+    &hover
+      color darken(mountain_meadow, 20%)
+
+.flash-message.-danger
+  background-color lighten(froly, 15%)
+  border .1rem solid darken(froly, 20%)
+  color darken(froly, 40%)
+  &:before
+    border-color transparent lighten(froly, 25%)
+  &:after
+    border-color transparent darken(froly, 40%)
+
+@keyframes slideRight
+  0%
+    right -5rem * 4
+
+  100%
+    right 1rem
+

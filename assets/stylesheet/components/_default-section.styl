@@ -1,0 +1,71 @@
+.default-section
+  full_centered_flex()
+  box-shadow: 0 0.55rem .55rem -.55rem scorpion
+  padding 2rem 1rem
+  position relative
+  width 100%
+  &.-advantages,
+  &.-whatIs,
+  &.-about
+    background-color wild_sand
+  &.-banner,
+  &.-contact
+    background-color goldenrod
+  &.-edit_user,
+  &.-admin
+    box-shadow none
+    margin-top 1rem
+    +desktop()
+      margin-top 0
+      width 75%
+  &.-banner
+    height 100vh
+    margin-top 3rem
+    +desktop()
+      height 60vh
+  &.-banner.-blog
+    height 40vh
+    +desktop()
+      height 30vh
+  &.-online
+    z-index 10
+  &.-whatIs
+    z-index 9
+  &.-howItWoks
+    z-index 8
+  &.-advantages
+    z-index 7
+  &.-service
+    background-color lighten(goldenrod, 15%)
+    z-index 6
+  &.-pricing
+    background lighten(curious_blue, 15%)
+    z-index 5
+  &.-about
+    z-index 4
+  &.-contact
+    z-index 3
+  &.-footer
+    align-self flex-end
+    background-color scorpion
+    padding 1rem
+  &.-panel
+    height 20vh
+  &.-welcome
+    background-color goldenrod
+    margin-bottom 2rem
+    margin-top 3rem
+    padding .5rem
+  &.-edit_user
+    align-self flex-start
+  &.-animate
+    display none
+    padding 0
+    width 100%
+  &.-admin
+    align-self flex-start
+    margin 0
+    padding 0
+  &.-login
+    box-shadow none
+    max-width 40rem

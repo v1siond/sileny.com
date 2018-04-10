@@ -1,0 +1,22 @@
+.pg-number
+  background-color wild_sand
+  border-radius 50%
+  cursor pointer
+  box-shadow 0 .1rem .5rem -.1rem black
+  font-family main_font
+  font-size 1rem
+  font-weight bold
+  list-style none
+  margin 0 .5rem
+  padding  .5rem .85rem
+  fast_transition()
+  &:hover
+    background-color darken(wild_sand, 15%)
+    transform scale(1.05)
+  &.-disabled
+    background-color wild_sand
+    color lighten(scorpion, 50%)
+    cursor unset
+    &:hover
+      background-color wild_sand
+      transform unset

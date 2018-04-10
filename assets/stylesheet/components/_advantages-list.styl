@@ -1,0 +1,25 @@
+.advantages-list
+  between_flex()
+  list-style none
+  margin-top 1.5rem
+  > .item
+    horizontal_centered_flex()
+    border-radius .5rem
+    box-shadow: 0 .25rem .4rem 0 rgba(black, .55)
+    margin-bottom 1rem
+    padding 1rem
+    width 95%
+    +desktop()
+      max-width 46%
+    &.-green
+      background-color mountain_meadow
+    &.-yellow
+      background-color goldenrod
+    &.-red
+      background-color froly
+    &.-orange
+      background-color darken(goldenrod, 10%)
+    &.-white
+      background-color grey
+    &.-blue
+      background-color curious_blue

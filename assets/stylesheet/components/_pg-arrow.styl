@@ -1,0 +1,20 @@
+.pg-arrow,
+.pg-arrow > a
+  color goldenrod
+  cursor pointer
+  font-family main_font
+  font-size 2rem
+  font-weight bold
+  fast_transition()
+  &:hover
+    color curious_blue
+    transform scale(1.05)
+
+.pg-arrow
+  list-style none
+  &.-disabled
+    background-color wild_sand
+    color lighten(scorpion, 50%)
+    cursor unset
+    &:hover
+      transform unset

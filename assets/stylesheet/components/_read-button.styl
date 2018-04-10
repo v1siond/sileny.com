@@ -1,0 +1,22 @@
+.read-button
+  full_centered_flex()
+  box-shadow none
+  background-color curious_blue
+  border-radius 50%
+  bottom -1.5rem
+  color white
+  height 3rem
+  position absolute
+  right 1rem
+  text-decoration none
+  text-shadow -0.05rem 0.05rem 0.15rem scorpion
+  fast_transition()
+  width 3rem
+  z-index 1
+  > .fa:before
+    content: '\f105';
+    font-size 3rem
+    font-weight bold
+  &:hover
+    box-shadow 0 .55rem 1rem -.5rem black
+    transform scale(1.075)

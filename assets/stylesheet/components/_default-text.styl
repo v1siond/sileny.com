@@ -1,0 +1,27 @@
+.default-text
+  color scorpion
+  font-family CenturyGothic, verdanam arial, sans-serif
+  font-size 1.4rem
+  font-weight 500
+  padding 1rem 0
+  z-index: 1;
+  &.-white
+    color white
+    text-shadow -.05rem .05rem .15rem black
+  &.-fullWidth
+    width 95%
+  &.-center
+    text-align center
+  &.-small
+    font-size .85rem
+  &.-aside
+    font-size 1rem
+  &.-date
+    margin -.25rem 0
+  &.-admin
+    margin 0 .25rem
+    padding 0
+.service-list > .item > .description > .default-text
+  text-align center
+  +mobile_sm()
+    text-align left

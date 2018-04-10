@@ -1,0 +1,27 @@
+.pricing-features
+  align-self flex-start
+  background-color white
+  box-shadow 0 .25rem .5rem -.4rem black
+  list-style none
+  margin-bottom 1.5rem
+  text-align center
+  width 100%
+  +desktop()
+    width 30%
+  > .feature
+    box-shadow 0 .25rem .4rem -.4rem black
+    color lighten(scorpion, 15%)
+    font-family main_font
+    font-size 1.25rem
+    font-weight bold
+    list-style none
+    padding 1rem
+    &.-name
+      background goldenrod
+      color white
+      font-size 1.75rem
+      text-shadow -.05rem .05rem .15rem scorpion
+      text-transform uppercase
+    &.-button
+      background goldenrod
+      padding 2rem

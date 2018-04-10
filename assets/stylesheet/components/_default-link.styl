@@ -1,0 +1,87 @@
+.default-link
+  color white
+  display inline-block
+  font-family main_font
+  font-weight normal
+  padding .5rem
+  text-align center
+  text-decoration none
+  text-shadow -.05rem .05rem .15rem black
+  word-break break-all
+  normal_transition()
+  &:hover
+    background-color darken(wild_sand, 5%)
+  &.-logo:hover
+    background none
+  &.-golden
+    vertical_centered_flex()
+    justify-content flex-start
+    font-size 1.5rem
+    height 100%
+    padding 0 0 0 1rem
+    position relative
+    width 100%
+    +desktop()
+      justify-content center
+      padding 0 1rem 0 0
+  &.-golden:before
+    background-color goldenrod
+    bottom 0
+    box-shadow .1rem .1rem .15rem grey
+    content ''
+    height 100%
+    left 0
+    position absolute
+    normal_transition()
+    z-index -1
+    width 0
+    +desktop()
+      bottom .5rem
+      height .15rem
+  &.-golden:hover
+    background none
+    +desktop()
+      color goldenrod
+  &.-golden:hover:before
+    width 100%
+    +desktop()
+      width calc(100% - 1rem)
+  &.-golden.-center
+    justify-content center
+    padding 0
+  &.-foot
+    text-decoration underline
+  &.-foot:hover,
+  &.-footSection:hover
+    background none
+    color goldenrod
+  &.-scorpion
+    color scorpion
+    font-weight bold
+    text-shadow none
+  &.-fullWidth
+    width 100%
+  &.-prev,
+  &.-next
+    around_centered_flex()
+    background-color curious_blue
+    width 100%
+    +tablet()
+      max-width 48%
+    > .name
+      max-width calc(100% - 8rem)
+    &:hover
+      box-shadow 0 .35rem .35rem -.25rem black
+      transform scale(1.025)
+  &.-prev
+    margin-bottom 1rem
+    text-align right
+    +tablet()
+      margin-bottom 0
+  &.-next
+    text-align left
+  &.-noPadding
+    padding 0
+    &:hover
+      background none
+      color: curious_blue

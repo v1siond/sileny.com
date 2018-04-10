@@ -1,0 +1,21 @@
+.menu-list
+  background-color curious_blue
+  height auto
+  padding 3rem 1rem 1rem
+  position absolute
+  right -14rem
+  text-align left
+  top 0
+  fast_transition()
+  width 12rem
+  z-index 9
+  +desktop()
+    between_centered_flex()
+    padding 0
+    position relative
+    right 0
+    width auto
+    z-index 1
+  > .option
+    height 3rem
+    list-style none

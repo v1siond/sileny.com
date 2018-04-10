@@ -1,0 +1,43 @@
+.default-button
+  background curious_blue
+  border none
+  border-radius .5rem
+  box-shadow 0 .2rem .2rem -.2rem black
+  color white
+  cursor pointer
+  display inline-block
+  font-weight bold
+  margin 0 .5rem
+  overflow hidden
+  padding 1rem 2rem
+  text-align center
+  text-decoration none
+  text-shadow -.05rem .05rem .15rem scorpion
+  text-transform uppercase
+  fast_transition()
+  width 14rem
+  &:hover
+    background darken(curious_blue, 15%)
+    box-shadow 0 .5rem .5rem -.5rem black
+    transform translateY(-.15rem)
+  &.-contact
+    margin 1rem
+    width 20rem
+    > span
+      text-transform unset
+  &.-golden
+    background goldenrod
+  &.-golden:hover
+    background darken(goldenrod, 35%)
+  &.-panel
+    font-size .65rem
+    margin .25rem
+    padding .35rem
+    width auto
+  &.-danger:hover
+    background froly
+  &.-input
+    width 100%
+    +tablet()
+      width 60%
+      margin 0

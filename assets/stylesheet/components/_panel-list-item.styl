@@ -1,0 +1,24 @@
+.panel-list-item
+  between_flex()
+  border-bottom .1rem solid darken(wild_sand, 25%)
+  padding .5rem
+  transition .25s
+  width 100%
+  &:hover
+    background lighten(goldenrod, 15%)
+  &:last-child
+    border none
+  > .info
+    between_centered_flex()
+    flex-wrap nowrap
+    width 100%
+    +desktop()
+      width 75%
+    p:nth-child(1)
+      width 40%
+    p:nth-child(2),
+    p:nth-child(3)
+      width 30%
+  > .options
+    +desktop()
+      width 25%

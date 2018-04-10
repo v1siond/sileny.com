@@ -1,0 +1,79 @@
+.default-title
+  font-family main_font
+  font-size 1.75rem
+  font-weight bold
+  position relative
+  text-align center
+  text-shadow -.05rem .05rem .15rem black
+  text-transform uppercase
+  z-index 1
+  +tablet()
+    font-size 2rem
+  &.-big
+    font-size 2rem
+    +tablet()
+      font-size 3rem
+  &.-black
+    color black
+  &.-fullWidth
+    width 100%
+  &.-blue
+    color curious_blue
+  &.-white
+    color white
+  &.-underline
+    margin-bottom 5%
+    &:before
+      background-color white
+      bottom -.5rem
+      box-shadow 0 .15rem 0 rgba(grey, .6)
+      content ''
+      height .1rem
+      left 0
+      position absolute
+      width 100%
+  &.-lateral
+    +desktop()
+      font-size: 2.5rem
+      text-align left
+  &.-lateral.right
+    text-align right
+  &.-about,
+  &.-golden
+    color goldenrod
+  &.-green
+    color mountain_meadow
+  &.-scorpion
+    color scorpion
+    text-shadow none
+  &.-post
+    color darken(goldenrod, 35%)
+    font-size 2.5rem
+    line-height 2.5rem
+    max-width calc(100% - 1.25rem)
+    text-align left
+    text-shadow none
+    text-transform none
+    > a
+      color scorpion
+      font-size 1.25rem
+      font-weight normal
+      line-height 1.25rem
+      text-decoration none
+      text-shadow none
+  &.-admin
+    padding: 0 .5rem
+    font-size 1.5rem
+    text-transform capitalize
+    width: 100%
+
+.advantages-list > .item > .default-title
+  width 100%
+  +desktop()
+    padding-left 1rem
+    text-align left
+    width 60%
+
+.service-list > .item > .description > .default-title
+  +mobile_sm()
+    text-align left
