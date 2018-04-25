@@ -8,6 +8,14 @@
     background lighten(goldenrod, 15%)
   &:last-child
     border none
+  &.-hidden,
+  &.-child
+    border-bottom none
+    padding 0
+  &.-hidden
+    display none
+  &.-dropdown
+    cursor pointer
   > .info
     between_centered_flex()
     flex-wrap nowrap

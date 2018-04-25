@@ -19,9 +19,6 @@
   </aside>
   <div class="default-section -admin">
     <?php include 'panel_admin_opciones.php';?>
-      <?php if (isset($flash_message)): ?>
-        <div class="limited-container -admin"><?php echo $flash_message; ?></div>
-      <?php endif?>
     <div class="result"></div>
   </div>
   <?php include 'views/layouts/footer.php';?>

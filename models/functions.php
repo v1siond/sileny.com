@@ -20,30 +20,30 @@ function limpiarDatos($datos) {
 	return $datos;
 }
 
-/*function paginaActual() {
+function paginaActual() {
 
-return isset($_GET['p']) ? (int) $_GET['p'] : 1;
+	return isset($_GET['p']) ? (int) $_GET['p'] : 1;
 
 }
 
 function numeroPaginas($post_por_pagina, $conexion) {
 
-$total_post = $conexion->prepare('SELECT FOUND_ROWS() as total');
-$total_post->execute();
-$total_post = $total_post->fetch()['total'];
+	$total_post = $conexion->prepare('SELECT FOUND_ROWS() as total');
+	$total_post->execute();
+	$total_post = $total_post->fetch()['total'];
 
-$numero_paginas = ceil($total_post / $post_por_pagina);
-return $numero_paginas;
+	$numero_paginas = ceil($total_post / $post_por_pagina);
+	return $numero_paginas;
 }
 
 function obtenerPost($post_por_pagina, $conexion) {
 
-$inicio = (paginaActual() > 1) ? (paginaActual() * $post_por_pagina - $post_por_pagina) : 0;
-$posts = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM post p LEFT JOIN admin a ON p.autor = a.id WHERE p.deleted = 0 ORDER BY p.id_post DESC LIMIT $inicio, $post_por_pagina");
-$posts->execute();
-return $posts->fetchAll();
+	$inicio = (paginaActual() > 1) ? (paginaActual() * $post_por_pagina - $post_por_pagina) : 0;
+	$posts = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM post p LEFT JOIN admin a ON p.autor = a.id WHERE p.deleted = 0 ORDER BY p.id_post DESC LIMIT $inicio, $post_por_pagina");
+	$posts->execute();
+	return $posts->fetchAll();
 
-}*/
+}
 
 function articulo($id) {
 	return (int) limpiarDatos($id);
@@ -116,15 +116,6 @@ function obtainPricingVe($conexion) {
 	return $plans->fetchAll();
 }
 
-function obtenerFeatures($conexion, $price_id) {
-
-	$features = $conexion->prepare("SELECT * FROM features
- 			WHERE price_id = '$price_id' ORDER BY id_feature
- 			");
-	$features->execute();
-	return $features->fetchAll();
-}
-
 function obtenerSocialMedia($conexion, $user_id) {
 	$media = $conexion->prepare("SELECT id_red, name, icon_name, link, arroba FROM social_media
  			WHERE admin_id = '$user_id' AND deleted = 0 ORDER BY id_red
@@ -166,52 +157,12 @@ function getMimeType($archivo) {
 	return $mimetype;
 }
 
-function flashMessage($zona) {
-	if (!empty($_GET)) {
-		$_SESSION['status'] = $_GET;
-
-		switch ($zona) {
-		case 'login':
-			header('Refresh: 1; url=' . route_login);
-			break;
-		case 'index':
-			header('Refresh: 1; url=' . route_index);
-			break;
-		default:
-			header('Refresh: 1; url=' . route_admin);
-			break;
-		}
-		die;
+function flashMessage($message, $status) {
+	$script = "<script>setTimeout(function(){ $('.flash-message').hide('slow').remove(); }, 5000);</script>";
+	if ($status == 'success') {
+		return "<p class='flash-message'>$message</p>$script";
 	} else {
-		if (!empty($_SESSION['status'])) {
-			$_GET = $_SESSION['status'];
-			unset($_SESSION['status']);
-		}
-	}
-
-	if (isset($_GET['status'])) {
-		if ($_GET['status'] == 'success') {
-			return '<p class="flash-message">Operación realizada con éxito</p>';
-		} else {
-			$flash_message = $_GET['status'];
-			return '<p class="flash-message -danger">' . $flash_message . '</p>';
-		}
-	}
-	if (isset($_GET['login'])) {
-		if ($_GET['login'] == 'success') {
-			return '<p class="flash-message">Ingreso Exitoso</p>';
-		} else {
-			$flash_message = 'usuario no existe o datos incorrectos';
-			return '<p class="flash-message -danger">' . $flash_message . '</p>';
-		}
-	}
-	if (isset($_GET['logout'])) {
-		if ($_GET['logout'] == 'success') {
-			return '<p class="flash-message">Logout Exitoso</p>';
-		} else {
-			$flash_message = $_GET['logout'];
-			return '<p class="flash-message -danger">' . $flash_message . '</p>';
-		}
+		return "<p class='flash-message -danger'>$message</p>$script";
 	}
 }
 

@@ -25,13 +25,13 @@
               </div>
             </div>
             <div class="post-title-share">
-              <h4 class="default-title -scorpion -post"><a href="ver_post.php?id=<?php echo $entrada['id_post']; ?>"><?php echo $entrada['title']; ?></a></h4>
+              <h4 class="default-title -scorpion -post"><a href="<?php echo route_ver_post . '&id=' . $entrada['id_post']; ?>"><?php echo $entrada['title']; ?></a></h4>
               <div class="share-button" id="post_<?php echo $entrada['id_post']; ?>">
                 <span class="bullet"></span>
                 <span class="bullet"></span>
                 <span class="bullet"></span>
               </div>
-              <a class="read-button" href="ver_post.php?id=<?php echo $entrada['id_post']; ?>"><i class="fas fa-angle-righ"></i></a>
+              <a class="read-button" href="<?php echo route_ver_post . '&id=' . $entrada['id_post']; ?>"><i class="fas fa-angle-right"></i></a>
             </div>
             <div class="post-autor-date">
               <div class="autor">
@@ -41,7 +41,6 @@
             </div>
           </article>
         <?php endforeach?>
-        <?php include 'views/layouts/paginacion.php';?>
       </section>
       <aside class="autor-bio">
         <figure class="post-avatar"><img src="<?php echo route_images . '/' . $admin['avatar']; ?>" alt="Z"></figure>

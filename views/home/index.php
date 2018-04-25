@@ -223,8 +223,8 @@ foreach ($plans as $plan):
 						<li class="feature -name"><?php echo $plan['title']; ?></li>
 						<li class="feature -price"><h3 class="default-title -big -scorpion -fullWidth"><?php echo $plan['price']; ?></h3></li>
 						<?php
-$features = obtenerFeatures($conexion, $plan['id_price']);
-foreach ($features as $feature):
+$planFeatures = $features->getFeatures($plan['id_price']);
+foreach ($planFeatures as $feature):
 ?>
 							<li class="feature"><?php echo $feature['description']; ?></li>
 						<?php endforeach?>

@@ -3,7 +3,10 @@
 session_start();
 ob_start();
 // Request Host to show correct plans
-
+$planClass = new Plan();
+$features = new Feature();
+$socials = new Social();
+$redes = $socials->getSocials();
 $host = $_SERVER['HTTP_HOST'];
 
 if ($host == 'localhost') {
@@ -18,13 +21,11 @@ if ($host == 'localhost') {
 }
 
 if ($name == 'Venezuela' && $code == 'VE') {
-	$plans = '';
+	$plans = $planClass->getPlanVenezuela();
 } else {
-	$plans = '';
+	$plans = $planClass->getPlanInternational();
 }
 
-$adm = new Admin();
-$admin = $adm->getAdmin();
 require 'views/home/index.php';
 ob_end_flush();
 

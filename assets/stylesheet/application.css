@@ -490,7 +490,6 @@ a {
 }
 .default-section.-animate {
   display: none;
-  padding: 0;
   width: 100%;
 }
 .default-section.-admin {
@@ -527,6 +526,10 @@ a {
 .default-text.-small,
 .markdown-typography p.-small {
   font-size: 0.85rem;
+}
+.default-text.-smaller,
+.markdown-typography p.-smaller {
+  font-size: 0.75rem;
 }
 .default-text.-aside,
 .markdown-typography p.-aside {
@@ -1577,6 +1580,17 @@ a {
 .panel-list-item:last-child {
   border: none;
 }
+.panel-list-item.-hidden,
+.panel-list-item.-child {
+  border-bottom: none;
+  padding: 0;
+}
+.panel-list-item.-hidden {
+  display: none;
+}
+.panel-list-item.-dropdown {
+  cursor: pointer;
+}
 .panel-list-item > .info {
   align-items: center;
   align-content: center;
@@ -2029,9 +2043,9 @@ a {
   font-family: 'sans-serif';
   font-size: 1rem;
   font-weight: bold;
-  height: 20rem;
-  max-height: 20rem;
-  min-height: 20rem;
+  height: 15rem;
+  max-height: 15rem;
+  min-height: 15rem;
   overflow: auto;
 }
 .user-data {

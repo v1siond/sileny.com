@@ -5,6 +5,10 @@ class Access extends ApplicationModel {
 	private $user;
 	private $pass;
 
+	public function __construct() {
+		parent::__construct('admin');
+	}
+
 	private function encryptPass($password) {
 		return hash('sha512', $password);
 	}
@@ -13,20 +17,22 @@ class Access extends ApplicationModel {
 
 		try {
 			if (($_POST['usuario'] != null || $_POST['usuario'] != "") && ($_POST['contra'] != null || $_POST['contra'] != "")) {
-				$db = new Conexion();
 				$this->user = limpiarDatos($_POST['usuario']);
 				$this->pass = $this->encryptPass(limpiarDatos($_POST['contra']));
-				$sql = $db->query("SELECT * FROM `admin`
+				$sql = $this->db->query("SELECT * FROM `admin`
           WHERE username = '$this->user' AND password = '$this->pass'
           OR email = '$this->user' AND password = '$this->pass'");
-				if ($db->rows($sql) > 0) {
-					$user = $db->run($sql);
+				if ($this->rows($sql) > 0) {
+					$user = $this->run($sql);
 					$_SESSION['id'] = $user['id'];
 					$_SESSION['user'] = $user['username'];
-					header('Location: ' . route_admin . '&login=success');
+					$flash_message = flashMessage("Bienvenido {$user['username']}", 'success');
+					echo $flash_message;
+					header("Refresh:2; url=" . route_admin);
 				} else {
-					$flash_message = flashMessage('login');
-					header('Location: ' . route_login . '&login=error');
+					$flash_message = flashMessage('Datos incorrectos', 'error');
+					echo $flash_message;
+					header("Refresh:2; url=" . route_login);
 				}
 			} else {
 				throw new Exception("Error: Campos vacíos", 1);

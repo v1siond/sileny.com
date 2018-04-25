@@ -1,63 +1,57 @@
 <?php
 
 //index
-define('route_index', 'http://localhost/zilene/');
+define('route_index', 'http://localhost/sileny.com/');
 
 //video route
-define('route_videos', 'http://localhost/zilene/assets/videos/');
+define('route_videos', 'http://localhost/sileny.com/assets/videos/');
 
 //images route
-define('route_images', 'http://localhost/zilene/assets/images/');
+define('route_images', 'http://localhost/sileny.com/assets/images/');
 
 //font route
-define('route_font', 'http://localhost/zilene/assets/font/');
+define('route_font', 'http://localhost/sileny.com/assets/font/');
 
 //js route
-define('route_js', 'http://localhost/zilene/assets/js/');
+define('route_js', 'http://localhost/sileny.com/assets/js/');
 
 //css route
-define('route_css', 'http://localhost/zilene/assets/stylesheet/');
+define('route_css', 'http://localhost/sileny.com/assets/stylesheet/');
 
 //admin
-define('route_admin', 'http://localhost/zilene/index.php?view=admin');
+define('route_admin', 'http://localhost/sileny.com/index.php?view=admin');
 
-//editar articulo
-define('update_user', 'http://localhost/zilene/controllers/admin/update_user.php');
+//editar
+define('update', 'admin=true&action=update');
 
-//borrar post
-define('route_borrar_post', 'http://localhost/zilene/controllers/admin/borrar_post.php');
+//borrar
+define('delete', 'admin=true&action=delete');
 
-//close session
-define('route_cerrar_session', 'http://localhost/zilene/controllers/admin/cerrar.php');
+//New
+define('nuevo', 'admin=true&action=new');
 
-//editar articulo
-define('route_editar_articulo', 'http://localhost/zilene/controllers/admin/editar_articulo.php');
+//Info
+define('info', 'admin=true&action=info');
 
-//nuevo articulo
-define('route_nuevo_articulo', 'http://localhost/zilene/controllers/admin/nuevo_articulo.php');
+//Plans
+define('route_plans', 'http://localhost/sileny.com/index.php?view=plan');
 
-//blog
-define('route_blog_index', 'http://localhost/zilene/controllers/blog/blog.php');
+//Plans
+define('route_media', 'http://localhost/sileny.com/index.php?view=social');
+
+//Plans
+define('route_feature', 'http://localhost/sileny.com/index.php?view=feature');
+
+//blog Index
+define('route_blog_index', 'http://localhost/sileny.com/index.php?view=blog');
 
 //post
-define('route_ver_post', 'http://localhost/zilene/controllers/blog/ver_post.php');
+define('route_ver_post', 'http://localhost/sileny.com/index.php?view=blog&layout=show');
 
 //login
-define('route_login', 'http://localhost/zilene/index.php?view=session');
+define('route_login', 'http://localhost/sileny.com/index.php?view=session');
 
-//Guardar plan
-define('guardar_plan', 'http://localhost/zilene/controllers/admin/guardar_plan.php');
-
-//Delete plan
-define('route_borrar_plan', 'http://localhost/zilene/controllers/admin/borrar_plan.php');
-
-//Guardar media
-define('guardar_media', 'http://localhost/zilene/controllers/admin/guardar_media.php');
-
-//Edit social media
-define('update_media', 'http://localhost/zilene/controllers/admin/update_media.php');
-
-//Delete amedia
-define('borrar_media', 'http://localhost/zilene/controllers/admin/borrar_media.php');
+//admin
+define('route_close_session', 'http://localhost/sileny.com/controllers/admin/cerrar.php');
 
 ?>
