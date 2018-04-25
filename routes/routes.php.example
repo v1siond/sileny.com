@@ -1,0 +1,57 @@
+<?php
+
+//index
+define('route_index', 'your_domain.com/');
+
+//video route
+define('route_videos', 'your_domain.com/assets/videos/');
+
+//images route
+define('route_images', 'your_domain.com/assets/images/');
+
+//font route
+define('route_font', 'your_domain.com/assets/font/');
+
+//js route
+define('route_js', 'your_domain.com/assets/js/');
+
+//css route
+define('route_css', 'your_domain.com/assets/stylesheet/');
+
+//admin
+define('route_admin', 'your_domain.com/index.php?view=admin');
+
+//editar
+define('update', 'admin=true&action=update');
+
+//borrar
+define('delete', 'admin=true&action=delete');
+
+//New
+define('nuevo', 'admin=true&action=new');
+
+//Info
+define('info', 'admin=true&action=info');
+
+//Plans
+define('route_plans', 'your_domain.com/index.php?view=plan');
+
+//Plans
+define('route_media', 'your_domain.com/index.php?view=social');
+
+//Plans
+define('route_feature', 'your_domain.com/index.php?view=feature');
+
+//blog Index
+define('route_blog_index', 'your_domain.com/index.php?view=blog');
+
+//post
+define('route_ver_post', 'your_domain.com/index.php?view=blog&layout=show');
+
+//login
+define('route_login', 'your_domain.com/index.php?view=session');
+
+//admin
+define('route_close_session', 'your_domain.com/controllers/admin/cerrar.php');
+
+?>
